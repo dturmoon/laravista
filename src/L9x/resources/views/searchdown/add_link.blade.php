@@ -20,8 +20,8 @@
                   <div class="form-text">
                     The page must contain the markdown source link with <code>data-media-type="text/markdown"</code>
                     attribute for the web-spider, for example:<br>
-                    <a href="/L8x/md/index">
-                        &lt;a data-media-type="text/markdown" href="https://raw.githubusercontent.com/rognoni/laravista/master/src/L8x/public/markdown/index.md">index.md&lt;/a>
+                    <a href="/L9x/md/index">
+                        &lt;a data-media-type="text/markdown" href="https://raw.githubusercontent.com/rognoni/laravista/master/src/L9x/public/markdown/index.md">index.md&lt;/a>
                     </a>
                   </div>
                 </div>

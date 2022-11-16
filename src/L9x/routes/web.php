@@ -17,10 +17,11 @@ use App\Http\Controllers\SearchdownController;
 |
 */
 
-Route::prefix('L8x')->group(function () {
+
+Route::prefix('L9x')->group(function () {
     Route::get('/', function () {
         return view('welcome');
-    });    
+    });
     Route::get('login', [LoginController::class, 'login'])->name('login');
     Route::post('login', [LoginController::class, 'loginSubmit']);
     Route::get('register', [LoginController::class, 'register'])->name('register');
@@ -31,22 +32,22 @@ Route::prefix('L8x')->group(function () {
     Route::post('searchdown/add', [SearchdownController::class, 'addLinkSubmit']);
 });
 
-Route::prefix('L8x')->middleware(['auth'])->group(function () {
+Route::prefix('L9x')->middleware(['auth'])->group(function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
-Route::prefix('L8x')->middleware(['auth', 'role:user'])->group(function () {
+Route::prefix('L9x')->middleware(['auth', 'role:user'])->group(function () {
     Route::get('home', function () {
         return view('home');
     })->name('home');
 });
 
-Route::prefix('L8x/admin')->middleware(['auth', 'role:admin'])->group(function () {
+Route::prefix('L9x/admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('editor', [AdminController::class, 'editor'])->name('editor');
     Route::post('editor', [AdminController::class, 'editorSubmit']);
 });
 
-Route::get('/L8x/artisan/migrate', function () {
+Route::get('/L9x/artisan/migrate', function () {
     Artisan::call('migrate');
     return Artisan::output();
 });

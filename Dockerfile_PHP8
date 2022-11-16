@@ -5,7 +5,23 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN apt-get update && apt-get install -y zip unzip vim
 RUN docker-php-ext-install pdo pdo_mysql
 
-COPY src/L9x/ /var/www/html
+WORKDIR /var/www/html/
+
+COPY src/ /var/www/html
+
+WORKDIR /var/www/html/L9x/
+
+RUN composer update
+
+WORKDIR /var/www/html/L8x/
+
+RUN composer update
+
+WORKDIR /var/www/html/
+
+RUN chmod 777 -R L9x/storage
+RUN chmod 777 -R L8x/storage
+
 
 COPY config/php8.ini /usr/local/etc/php/
 
