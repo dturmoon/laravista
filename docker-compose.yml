@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  laravista:
+    build:
+      dockerfile: Dockerfile_PHP8
+    ports:
+      - "80:80/tcp"
